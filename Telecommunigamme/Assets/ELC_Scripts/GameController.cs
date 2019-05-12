@@ -13,7 +13,10 @@ public class GameController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+       
     {
+        transform.rotation = new Quaternion(0,0,0,0);
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(speed * Vector3.right);
@@ -21,6 +24,15 @@ public class GameController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(speed * Vector3.left);
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Translate(speed * Vector3.up);
+
+            }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(speed * Vector3.down);
         }
     }
 }

@@ -15,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - Environment
   - Perso
+  - Environment
   - 
   - 
   - 
@@ -40,9 +40,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Perso
-    uniqueID: 122666523
-    locked: 0
   - name: Environment
     uniqueID: 3871107677
     locked: 0

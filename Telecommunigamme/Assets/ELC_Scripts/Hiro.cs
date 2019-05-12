@@ -9,26 +9,27 @@ public class Hiro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(Alaïa.transform.position.x - 1, Alaïa.transform.position.y, Alaïa.transform.position.z);
+        transform.position = new Vector3(Alaïa.transform.position.x - 2, Alaïa.transform.position.y, Alaïa.transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(transform.position.x - Alaïa.transform.position.x) >= 2) {
+        if (Mathf.Abs(transform.position.x - Alaïa.transform.position.x) >= 4) {
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.position = new Vector3(Alaïa.transform.position.x - 2, Alaïa.transform.position.y, Alaïa.transform.position.z);
-                transform.position = new Vector3(Alaïa.transform.position.x - 1.8f, Alaïa.transform.position.y, Alaïa.transform.position.z);
+                transform.position = new Vector3(Alaïa.transform.position.x - 4, Alaïa.transform.position.y, Alaïa.transform.position.z);
+                transform.position = new Vector3(Alaïa.transform.position.x - 3.99f, Alaïa.transform.position.y, Alaïa.transform.position.z);
             }
             
             if (Input.GetKey(KeyCode.LeftArrow))
             {
               
-                transform.position = new Vector3(Alaïa.transform.position.x + 2, Alaïa.transform.position.y, Alaïa.transform.position.z);
+                transform.position = new Vector3(Alaïa.transform.position.x + 4, Alaïa.transform.position.y, Alaïa.transform.position.z);
                 
-                transform.position = new Vector3(Alaïa.transform.position.x + 1.8f, Alaïa.transform.position.y, Alaïa.transform.position.z);
+                transform.position = new Vector3(Alaïa.transform.position.x + 3.99f, Alaïa.transform.position.y, Alaïa.transform.position.z);
             }
+           
 
         }
     }
