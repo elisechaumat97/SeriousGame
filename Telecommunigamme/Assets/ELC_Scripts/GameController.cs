@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public float speed;
+    public float speed=100;
+    Vector3 target;
+    bool move = false;
+
     // Use this for initialization
     void Start()
     {
@@ -16,23 +19,29 @@ public class GameController : MonoBehaviour
        
     {
         transform.rotation = new Quaternion(0,0,0,0);
+        
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetMouseButtonDown(0))
         {
-            transform.Translate(speed * Vector3.right);
+            move = true;
+            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            target.y = transform.position.y;
+            target.z = transform.position.z;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(speed * Vector3.left);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(speed * Vector3.up);
+        if(move == true)
+            {
+            transform.position = Vector3.MoveTowards(transform.position, target, speed);
 
-            }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(speed * Vector3.down);
         }
+        if (target == transform.position)
+        {
+            move = false;
+        }
+        
+
+        
+
     }
+   
+    
 }
