@@ -123,6 +123,10 @@ public class CodageMorse : MonoBehaviour
                 change = 1;
             }
         }
+    }
+    public void ClickDelete()
+    {
+        Text textMorse = GetComponent<Text>();
 
 
     }
