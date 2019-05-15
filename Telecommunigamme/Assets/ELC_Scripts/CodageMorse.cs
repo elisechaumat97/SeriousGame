@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class CodageMorse : MonoBehaviour
 {
-    public int word=0; // indicate the word to code in morse (0:cerf, 1:2, 2:droite)
-    public int change = 0; // indicate if a word was just found
+    public static int word=0; // indicate the word to code in morse (0:cerf, 1:2, 2:droite)
+    public static int change = 0; // indicate if a word was just found
+    public static int displayResult = 0; // indicate if textResult has to display
 
     public void ClickDot()
     {
@@ -69,6 +70,7 @@ public class CodageMorse : MonoBehaviour
                 textMorse.color = Color.green;
                 change = 1;
                 word = 1;
+                displayResult = 1;
             }
         }
         if (word==1)
@@ -78,6 +80,8 @@ public class CodageMorse : MonoBehaviour
                 textMorse.color = Color.green;
                 change = 1;
                 word = 2;
+                displayResult = 1;
+
             }
         }
         if (word == 2)
@@ -87,7 +91,39 @@ public class CodageMorse : MonoBehaviour
                 textMorse.color = Color.green;
                 change = 1;
                 word = 3;
+                displayResult = 1;
+
             }
         }
+    }
+    public void TooLong()
+    {
+        Text textMorse = GetComponent<Text>();
+        if (word == 0 & change!=1)
+        {
+            if (textMorse.text.Length > "_ . _ .    .    . _ .    . . _ . ".Length)
+            {
+                textMorse.color = Color.red;
+                change = 1;
+            }
+        }
+        if (word == 1 & change != 1)
+        {
+            if (textMorse.text.Length > ". . _ _ _ ".Length)
+            {
+                textMorse.color = Color.red;
+                change = 1;
+            }
+        }
+        if (word == 2 & change != 1)
+        {
+            if (textMorse.text.Length > "_ . .    . _ .    _ _ _    . .    _    . ".Length)
+            {
+                textMorse.color = Color.red;
+                change = 1;
+            }
+        }
+
+
     }
 }
