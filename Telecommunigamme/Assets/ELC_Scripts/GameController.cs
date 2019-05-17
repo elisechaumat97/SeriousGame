@@ -7,15 +7,19 @@ public class GameController : MonoBehaviour
     public float speed=100;
     Vector3 target;
     bool move = false;
+    public static GameController instance = null;
 
-    // Use this for initialization
     void Start()
     {
 
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
        
     {
         transform.rotation = new Quaternion(0,0,0,0);
@@ -42,6 +46,21 @@ public class GameController : MonoBehaviour
         
 
     }
+
+    public void MoveObject(Vector3 targetObject)
+    {
+        move = true;
+        if (move == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetObject, speed);
+            Debug.Log(targetObject);
+        }
+        if (targetObject == transform.position)
+        {
+            move = false;
+        }
+    }
+ 
    
     
 }
