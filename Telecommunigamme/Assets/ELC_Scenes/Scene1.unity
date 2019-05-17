@@ -288,8 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9952b16f641f04b9c14cb5fd80d6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "Ala\xEFa": {fileID: 1674327683}
-  speed: 1
 --- !u!68 &109467880
 EdgeCollider2D:
   m_ObjectHideFlags: 0
