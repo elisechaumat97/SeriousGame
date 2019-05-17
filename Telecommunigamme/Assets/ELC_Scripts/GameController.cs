@@ -7,11 +7,11 @@ public class GameController : MonoBehaviour
     public float speed=100;
     Vector3 target;
     bool move = false;
-
+    public Vector3 startingPosition;
     // Use this for initialization
     void Start()
     {
-
+        transform.position = startingPosition;
     }
 
     // Update is called once per frame
@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour
         {
             move = true;
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            target.y = transform.position.y;
             target.z = transform.position.z;
         }
         if(move == true)
