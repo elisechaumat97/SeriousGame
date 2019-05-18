@@ -7,25 +7,26 @@ using UnityEngine.UI;
 public class ANQ_CodageMorseWords : MonoBehaviour
 {
 
-    public void Update()
+    public void Update() // will display the found words with their morse translation
     {
         Text textResult = GetComponent<Text>();
-        if (CodageMorse.word == 1 & CodageMorse.displayResult==1)
+
+        if (CodageMorse.word == 1 & CodageMorse.displayResult)
         {
-            textResult.text = "CERF : _ . _ .    .    . _ .    . . _ . ";
-            CodageMorse.displayResult = 0;
+            textResult.text = ANQ_TextWords.animalWord + " : " + ANQ_TextWords.animalMorse;
+            CodageMorse.displayResult = false;
 
         }
-        if (CodageMorse.word == 2 & CodageMorse.displayResult == 1)
+        if (CodageMorse.word == 2 & CodageMorse.displayResult)
         {
-            textResult.text = textResult.text + Environment.NewLine+ "2 : . . _ _ _ ";
-            CodageMorse.displayResult = 0;
+            textResult.text = textResult.text + Environment.NewLine + ANQ_TextWords.numberWord + " : " + ANQ_TextWords.numberMorse;
+            CodageMorse.displayResult = false;
 
         }
-        if (CodageMorse.word == 3 & CodageMorse.displayResult == 1)
+        if (CodageMorse.word == 3 & CodageMorse.displayResult)
         {
-            textResult.text = textResult.text + Environment.NewLine + "DROITE : _ . .    . _ .    _ _ _    . .    _    . ";
-            CodageMorse.displayResult = 0;
+            textResult.text = textResult.text + Environment.NewLine + ANQ_TextWords.directionWord + " : " + ANQ_TextWords.directionMorse;
+            CodageMorse.displayResult = false;
 
         }
     }
