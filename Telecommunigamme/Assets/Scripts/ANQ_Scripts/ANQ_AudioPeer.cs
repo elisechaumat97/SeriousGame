@@ -7,9 +7,15 @@ using UnityEngine;
 
 public class ANQ_AudioPeer : MonoBehaviour
 {
-    private new AudioSource audio;
-    public static float[] samples = new float[512];
-    public static float[] freqBand = new float[8];
+    new AudioSource audio;
+    static float[] samples = new float[512];
+    static float[] freqBand = new float[8];
+    static float[] bandBuffer = new float[8];
+    float[] bufferDecrease = new float[8];
+
+    float[] freqBandHighest = new float[8];
+    public static float[] audioBand = new float[8];
+    public static float[] audioBandBuffer = new float[8];
 
     void Start()
     {
@@ -20,11 +26,43 @@ public class ANQ_AudioPeer : MonoBehaviour
     {
         GetSpectrumAudioSource();
         MakeFrequencyBands();
+        BandBuffer();
+    }
+
+    void CreateAudioBands()
+    {
+        for (int i = 0; i < 8 ; i++)
+        {
+            if (freqBand[i] > freqBandHighest[i])
+            {
+                freqBandHighest[i] = freqBand[i];
+            }
+            audioBand[i] = (freqBand[i] / freqBandHighest[i]);
+            audioBandBuffer[i] = (bandBuffer[i] / freqBandHighest[i]);
+        }
     }
 
     void GetSpectrumAudioSource()
     {
         audio.GetSpectrumData(samples, 0, FFTWindow.Blackman);
+    }
+
+    void BandBuffer()
+    {
+        for (int g = 0; g < 8; ++g)
+        {
+            if (freqBand[g] > bandBuffer[g])
+            {
+                bandBuffer[g] = freqBand[g];
+                bufferDecrease[g] = 0.005f;
+            }
+            if (freqBand[g] < bandBuffer[g])
+            {
+                bandBuffer[g] -= bufferDecrease[g];
+                bufferDecrease[g] *= 1.2f;
+            }
+        }
+
     }
 
     void MakeFrequencyBands()
