@@ -8,9 +8,9 @@ using UnityEngine;
 public class ANQ_AudioPeer : MonoBehaviour
 {
     new AudioSource audio;
-    static float[] samples = new float[512];
-    static float[] freqBand = new float[8];
-    static float[] bandBuffer = new float[8];
+    public static float[] samples = new float[512];
+    public static float[] freqBand = new float[8];
+    public static float[] bandBuffer = new float[8];
     float[] bufferDecrease = new float[8];
 
     float[] freqBandHighest = new float[8];
@@ -27,6 +27,7 @@ public class ANQ_AudioPeer : MonoBehaviour
         GetSpectrumAudioSource();
         MakeFrequencyBands();
         BandBuffer();
+        CreateAudioBands();
     }
 
     void CreateAudioBands()

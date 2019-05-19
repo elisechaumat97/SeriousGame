@@ -61,7 +61,7 @@ public class ANQ_TextWords : MonoBehaviour
 
     
 
-    string ToMorse(string word) // function to translate a word in morse
+    public static string ToMorse(string word) // function to translate a word in morse
     {
         string wordMorse = "";
         foreach (char letter1 in word)
