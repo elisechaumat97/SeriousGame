@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(AudioSource))]
-
-public class ANQ_AudioPeer : MonoBehaviour
+public class ANQ_AudioPeerHigh : MonoBehaviour
 {
     new AudioSource audio;
     public static float[] samples = new float[512];
@@ -32,7 +29,7 @@ public class ANQ_AudioPeer : MonoBehaviour
 
     void CreateAudioBands()
     {
-        for (int i = 0; i < 8 ; i++)
+        for (int i = 0; i < 8; i++)
         {
             if (freqBand[i] > freqBandHighest[i])
             {

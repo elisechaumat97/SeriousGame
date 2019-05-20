@@ -14,8 +14,8 @@ public class ANQ_LightOnAudio : MonoBehaviour
         _light = GetComponent<Light>();
     }
 
-    void Update()
-    {
-        _light.intensity = (ANQ_AudioPeer.audioBandBuffer[band] * (maxIntensity - minIntensity)) + minIntensity;
-    }
+    //void Update()
+    //{
+    //    _light.intensity = (ANQ_AudioPeer.audioBandBuffer[band] * (maxIntensity - minIntensity)) + minIntensity;
+    //}
 }
