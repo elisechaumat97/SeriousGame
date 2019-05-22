@@ -10,10 +10,14 @@ public class CodageMorse : MonoBehaviour
     public static bool displayResult = false; // indicate if textResult has to display
     public static bool isBlocked = false; // if the word is too long, the player will be prevented from writing
 
+
     ////// Buttons for Morse writings
+ 
+
 
     public void ClickDot()
     {
+
         if (!isBlocked)
         {
             Text textMorse = GetComponent<Text>();
@@ -98,8 +102,7 @@ public class CodageMorse : MonoBehaviour
         {
             if (textMorse.text == ANQ_TextWords.animalMorse) // if equal, it will put the text in green, indicate it has changed, indicate the new word, indicate to display
             {
-                textMorse.color = Color.green;
-                haschanged = true;
+                textMorse.text = "";
                 word = 1;
                 displayResult = true;
             }
@@ -108,8 +111,7 @@ public class CodageMorse : MonoBehaviour
         {
             if (textMorse.text == ANQ_TextWords.numberMorse)
             {
-                textMorse.color = Color.green;
-                haschanged = true;
+                textMorse.text = "";
                 word = 2;
                 displayResult = true;
 
@@ -119,8 +121,7 @@ public class CodageMorse : MonoBehaviour
         {
             if (textMorse.text == ANQ_TextWords.directionMorse)
             {
-                textMorse.color = Color.green;
-                haschanged = true;
+                textMorse.text = "";
                 word = 3;
                 displayResult = true;
 
