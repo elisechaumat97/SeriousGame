@@ -19,7 +19,6 @@ public class ANQ_dotKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("click");
             dotButton.onClick.Invoke();
         }
     }

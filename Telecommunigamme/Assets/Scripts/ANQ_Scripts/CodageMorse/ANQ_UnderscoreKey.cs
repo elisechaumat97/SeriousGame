@@ -19,7 +19,6 @@ public class ANQ_UnderscoreKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("click");
             underscoreButton.onClick.Invoke();
         }
     }

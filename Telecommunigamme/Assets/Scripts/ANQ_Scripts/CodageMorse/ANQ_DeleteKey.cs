@@ -19,7 +19,6 @@ public class ANQ_DeleteKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            Debug.Log("click");
             deleteButton.onClick.Invoke();
         }
     }

@@ -19,7 +19,6 @@ public class ANQ_spaceKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("click");
             spaceButton.onClick.Invoke();
         }
     }
