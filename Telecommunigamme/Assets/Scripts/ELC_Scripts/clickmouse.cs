@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class click : MonoBehaviour
+public class clickmouse : MonoBehaviour
 {
     Vector3 mouspos;
     public GameObject player;
