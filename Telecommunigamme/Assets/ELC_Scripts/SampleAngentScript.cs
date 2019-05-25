@@ -20,6 +20,10 @@ public class SampleAngentScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1);
+
         agent.SetDestination(target.position);
+       
+
     }
 }
