@@ -209,4 +209,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigButterfly: {fileID: 4137907045625026696, guid: 0d17c227fa3bb044eab97441f75abb26,
     type: 3}
-  bigButterflyNumber: 6
+  setBigButterflyNumber: 6
+  butterflyImages:
+  - {fileID: 21300000, guid: f1892e5315c38de4da417b5bceeaf608, type: 3}
+  - {fileID: 21300000, guid: 122e52e58721ba549bf27be0eb276595, type: 3}
+  - {fileID: 21300000, guid: b306095aa68f07a4fb51ac3056d00d16, type: 3}
+  - {fileID: 21300000, guid: 86d568c4e60eb5e4d9838a4cb542a7cb, type: 3}
+  - {fileID: 21300000, guid: 0f4a0eb325df3514a8a27db3888676f7, type: 3}
+  - {fileID: 21300000, guid: 62bfc4a163a95004e980049f6a126251, type: 3}
+  - {fileID: 21300000, guid: 71f94d05bb0fded449cce0e240bca635, type: 3}
+  - {fileID: 21300000, guid: 7eeef2e579178fb41aa982ae2382f5f2, type: 3}
+  - {fileID: 21300000, guid: a3b481ba3503ad5408382b1258ece365, type: 3}

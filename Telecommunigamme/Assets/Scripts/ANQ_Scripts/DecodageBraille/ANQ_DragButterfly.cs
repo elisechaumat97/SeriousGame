@@ -8,16 +8,18 @@ public class ANQ_DragButterfly : MonoBehaviour
     private float startPosY;
     private bool isBeingHeld = false;
 
+    int maxDist = ANQ_GenerateBigButterfly.bigButterflyNumber; 
 
     void Update()
-    {
-        if (isBeingHeld)
+    {        if (isBeingHeld)
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, 0, 0);
+            if (mousePos.x - startPosX >= -maxDist & mousePos.x - startPosX <= maxDist)
+            {
+                this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, 0, 0);
+            }
         }
     }
 
