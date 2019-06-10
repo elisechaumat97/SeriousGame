@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             }
             sens = -1;
             Alaia.transform.position = new Vector3(player.transform.position.x -1f, player.transform.position.y + 1.58f, -1);
-            Hiro.transform.position = new Vector3(Alaia.transform.position.x - 0.5f, Alaia.transform.position.y-0.11f, -1);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x - 0.5f, Alaia.transform.position.y-0.1f, -1);
 
         }
         else
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             }
             sens = 1;
             Alaia.transform.position = new Vector3(player.transform.position.x + 1f, player.transform.position.y + 1.58f, -1);
-            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y-0.11f, -1);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y-0.1f, -1);
 
         }
 
