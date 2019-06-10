@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class managerPrevious : MonoBehaviour
 {
-    public GameObject Button;
+    //public GameObject Button;
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Button.SetActive(true);
+        GameManager.instance.PreviousScene();
 
     }
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        Button.SetActive(false);
+    //private void OnTriggerExit2D(Collider2D col)
+    //{
+    //  Button.SetActive(false);
 
-    }
+    // }
 }

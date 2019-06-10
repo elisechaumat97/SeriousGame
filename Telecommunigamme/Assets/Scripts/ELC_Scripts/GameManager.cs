@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject leftCollider;
     public GameObject rightCollider;
     public GameObject Alaia;
+    public GameObject Hiro;
+    private int sens;
     // Start is called before the first frame update
     void Awake()
 
@@ -25,7 +27,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Debug.Log(currentScene);
+
         SetUp();
+
 
     }
 
@@ -37,36 +42,66 @@ public class GameManager : MonoBehaviour
 
         if (currentScene > previousScene)
         {
+            if (currentScene == 0)
+            {
+                target.transform.position = new Vector3(leftCollider.transform.position.x + 3f, leftCollider.transform.position.y, leftCollider.transform.position.z);
+                player.transform.position = new Vector3(leftCollider.transform.position.x + 3f, leftCollider.transform.position.y, leftCollider.transform.position.z);
+                
 
-            target.transform.position = leftCollider.transform.position;
-            player.transform.position = leftCollider.transform.position;
+            }
+            else
+            {
+                target.transform.position = new Vector3(leftCollider.transform.position.x + 4f, leftCollider.transform.position.y, leftCollider.transform.position.z);
+                player.transform.position = new Vector3(leftCollider.transform.position.x + 4f, leftCollider.transform.position.y, leftCollider.transform.position.z);
+            }
+            sens = -1;
+            Alaia.transform.position = new Vector3(player.transform.position.x -1f, player.transform.position.y + 1.58f, -1);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x - 0.5f, Alaia.transform.position.y-0.11f, -1);
+
         }
         else
         {
-            target.transform.position = rightCollider.transform.position;
-            player.transform.position = rightCollider.transform.position;
+            if (currentScene == 0)
+            {
+                target.transform.position = new Vector3(rightCollider.transform.position.x - 1f, rightCollider.transform.position.y, rightCollider.transform.position.z);
+                player.transform.position = new Vector3(rightCollider.transform.position.x - 1f, rightCollider.transform.position.y, rightCollider.transform.position.z);
+            }
+            else
+            {
+                target.transform.position = new Vector3(rightCollider.transform.position.x - 4f, rightCollider.transform.position.y, rightCollider.transform.position.z);
+                player.transform.position = new Vector3(rightCollider.transform.position.x - 4f, rightCollider.transform.position.y, rightCollider.transform.position.z);
+            }
+            sens = 1;
+            Alaia.transform.position = new Vector3(player.transform.position.x + 1f, player.transform.position.y + 1.58f, -1);
+            Hiro.transform.position = new Vector3(Alaia.transform.position.x + 0.5f, Alaia.transform.position.y-0.11f, -1);
 
         }
 
         Alaia.SetActive(true);
+        Hiro.SetActive(true);
 
 
 
     }
-  
+
     public void NextScene()
     {
         previousScene = currentScene;
         currentScene += 1;
+        Alaia.SetActive(false);
+        Hiro.SetActive(false);
         Application.LoadLevel(scenesNames[currentScene]);
     }
 
     public void PreviousScene()
     {
+
         previousScene = currentScene;
         currentScene += -1;
+
+        Alaia.SetActive(false);
+        Hiro.SetActive(false);
         Application.LoadLevel(scenesNames[currentScene]);
-        
     }
 
 
