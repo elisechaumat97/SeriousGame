@@ -7,12 +7,6 @@ public class clickmouse : MonoBehaviour
 {
     Vector3 mouspos;
     public Tilemap grid;
-    public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.transform.position = player.transform.position;
-    }
 
     // Update is called once per frame
     void Update()
