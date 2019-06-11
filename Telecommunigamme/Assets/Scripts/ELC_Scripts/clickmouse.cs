@@ -7,7 +7,6 @@ public class clickmouse : MonoBehaviour
 {
     Vector3 mouspos;
     public Tilemap grid;
-
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +19,7 @@ public class clickmouse : MonoBehaviour
 
             if (!grid.HasTile(cellPosition))
             {
+               
                 this.transform.position = new Vector3(mouspos.x, mouspos.y, -1);
             }
         }
